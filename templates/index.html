@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ASCII Art Web</title>
+    <link rel="shortcut icon" href="static/favicon.ico" type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/htmx.org@1.8.0/dist/htmx.min.js"></script>
+</head>
+<body>
+    <h1>ASCII Art Generator</h1>
+
+    <form hx-post="/ascii-art" hx-target="#ascii-art-output">
+        <label for="text">Text:</label>
+        <input type="text" id="text" name="text" required>
+        <br>
+
+        <label for="banner">Banner:</label>
+        <select id="banner" name="banner" required>
+            <option value="standard">Standard</option>
+            <option value="fancy">Fancy</option>
+            <option value="bold">Bold</option>
+        </select>
+        <br>
+
+        <button type="submit">Generate ASCII Art</button>
+    </form>
+
+    <div id="ascii-art-output"></div> <!-- This will hold the generated ASCII art -->
+
+</body>
+</html>
