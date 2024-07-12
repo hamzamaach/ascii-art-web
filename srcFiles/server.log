@@ -3,3 +3,11 @@ Server : 2024/07/12 15:41:41 GET : /
 Server : 2024/07/12 15:41:41 Response 200 OK
 Server : 2024/07/12 15:42:04 Shutdown signal received! Shutting down the server...
 Server : 2024/07/12 15:42:04 Server stopped gracefully
+Server : 2024/07/12 15:43:45 Starting the server on : localhost:1337
+Server : 2024/07/12 15:43:56 GET : /
+Server : 2024/07/12 15:43:56 Response 200 OK
+Server : 2024/07/12 15:55:24 Shutdown signal received! Shutting down the server...
+Server : 2024/07/12 15:55:24 Server stopped gracefully
+Server : 2024/07/12 15:58:47 Starting the server on : localhost:1337
+Server : 2024/07/12 15:58:49 Shutdown signal received! Shutting down the server...
+Server : 2024/07/12 15:58:49 Server stopped gracefully

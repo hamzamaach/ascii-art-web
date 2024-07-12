@@ -9,12 +9,12 @@ func main() {
 
 	// Create a new server instance
 	MyServer := ServerMaker()
+	
+	// Close the log file when the program exits
+	defer MyServer.Logfile.Close()
 
 	// Map the routes to their respective handlers
 	MyServer.mapRoutes()
-
-	// Close the log file when the program exits
-	defer MyServer.Logfile.Close()
 
 	// Start the server
 	MyServer.run()
