@@ -2,31 +2,106 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>ASCII Art Web</title>
-    <link rel="shortcut icon" href="static/favicon.ico" type="image/x-icon">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://unpkg.com/htmx.org@1.8.0/dist/htmx.min.js"></script>
+    <title>ASCII ART WEB</title>
+    <link rel="icon" href="/static/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600&display=swap">
+    <style>
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+        }
+        center {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+        h1 {
+            font-weight: 300;
+            margin-bottom: 10px;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        textarea {
+            width: 300px;
+            height: 100px;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        select {
+            width: 300px;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        input[type="submit"] {
+            background-color: #169084;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #036378;
+        }
+        pre {
+            background-color: #f0f0f0;
+            border-radius: 5px;
+        }
+    </style>
 </head>
 <body>
-    <h1>ASCII Art Generator</h1>
-
-    <form hx-post="/ascii-art" hx-target="#ascii-art-output">
-        <label for="text">Text:</label>
-        <input type="text" id="text" name="text" required>
-        <br>
-
-        <label for="banner">Banner:</label>
-        <select id="banner" name="banner" required>
-            <option value="standard">Standard</option>
-            <option value="fancy">Fancy</option>
-            <option value="bold">Bold</option>
-        </select>
-        <br>
-
-        <button type="submit">Generate ASCII Art</button>
-    </form>
-
-    <div id="ascii-art-output"></div> <!-- This will hold the generated ASCII art -->
-
+    <center>
+        <h1>ASCII ART WEB</h1>
+        <form action="/ascii-art" method="post" hx-target="#result" hx-swap="outerHTML">
+            <textarea name="string" required></textarea><br>
+            <select name="banner">
+                <option value="standard">Standard</option>
+                <option value="shadow">Shadow</option>
+                <option value="thinkertoy">Thinkertoy</option>
+            </select><br>
+            <input type="submit" value="Generate">
+        </form>
+        <div id="result">
+            <pre>{{. }}</pre>
+        </div>
+    </center>
+    <script src="https://unpkg.com/htmx.org@1.7.0/dist/htmx.min.js"></script>
 </body>
 </html>
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ASCII ART WEB</title>
+    <link rel="icon" href="/static/favicon.ico" type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <center>
+    <h1>ASCII ART WEB</h1>
+        <form action="/ascii-art" method="post">
+            <textarea name="string" required></textarea><br>
+            <select name="banner">
+                <option value="standard">Standard</option>
+                <option value="shadow">Shadow</option>
+                <option value="thinkertoy">Thinkertoy</option>
+            </select><br>
+            <h6>
+            <input type="submit" value="Generate">
+        </form>
+        <pre>{{. }}</pre>
+    </center>
+</body>
+</html> -->

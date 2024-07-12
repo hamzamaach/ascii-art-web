@@ -1,0 +1,5 @@
+Server : 2024/07/12 15:41:37 Starting the server on : localhost:1337
+Server : 2024/07/12 15:41:41 GET : /
+Server : 2024/07/12 15:41:41 Response 200 OK
+Server : 2024/07/12 15:42:04 Shutdown signal received! Shutting down the server...
+Server : 2024/07/12 15:42:04 Server stopped gracefully
