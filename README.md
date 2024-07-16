@@ -36,7 +36,7 @@ ASCII-Art-Web is a web-based implementation of the ASCII-Art project. It allows 
 
 1. Enter your text in the input field.
 2. Select the desired banner style (shadow, standard, or thinkertoy) using the radio buttons.
-3. Click the "Submit" button to generate the ASCII art.
+3. Click the "Generate" button to generate the ASCII art.
 
 ## Implementation Details
 
