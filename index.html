@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>ASCII ART</title>
+</head>
+
+<body>
+    <h1>ASCII ART</h1>
+    <form action="/ascii-art" method="post">
+        <textarea name="string"></textarea><br>
+        <select name="banner">
+            <option value="standard">Standard</option>
+            <option value="shadow">Shadow</option>
+            <option value="thinkertoy">Thinkertoy</option>
+        </select><br>
+        <input type="submit" value="Show">
+    </form>
+    <pre>{{ . }}</pre>
+</body>
+
+</html>
