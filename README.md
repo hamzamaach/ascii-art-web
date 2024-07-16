@@ -7,7 +7,7 @@ ASCII-Art-Web is a web-based implementation of the ASCII-Art project. It allows 
 ## Authors
 
 - Hamza Maach
-- ___________
+- Ismail Bentour
 
 ## Usage
 
@@ -15,12 +15,10 @@ ASCII-Art-Web is a web-based implementation of the ASCII-Art project. It allows 
 
 1. Clone the repository:
 
-    <!--
     ```sh
-     git clone https://github.com/hamzamaach/ascii-art-web.git 
+    git clone https://learn.zone01oujda.ma/git/ibentour/ascii-art-web.git
     cd ascii-art-web
     ```
-    -->
 
 2. Run the Go application:
 

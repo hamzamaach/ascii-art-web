@@ -9,17 +9,13 @@ func HandleAsciiArt(w http.ResponseWriter, r *http.Request, tmpl string) {
 	str := r.FormValue("string")
 	banner := r.FormValue("banner")
 
-	if CheckBanner(banner) {
-		http.Error(w, "404 | Bad Request: Banner not found", http.StatusNotFound)
-		return
-	}
-	if str == "" {
-		http.Error(w, "400 | Bad Request: No input provided", http.StatusBadRequest)
+	if CheckValidInput(str) {
+		http.Error(w, "400 | Bad Request: Invalid input. The input must contain only printable ASCII characters with ASCII values ranging from 32 to 126.", http.StatusBadRequest)
 		return
 	}
 
-	if CheckValidInput(str) {
-		http.Error(w, "400 | Bad Request: Invalid input. The input must contain characters with ASCII values ranging from 32 to 126.", http.StatusBadRequest)
+	if CheckBanner(banner) {
+		http.Error(w, "404 | Bad Request: Banner not found", http.StatusNotFound)
 		return
 	}
 
@@ -28,6 +24,7 @@ func HandleAsciiArt(w http.ResponseWriter, r *http.Request, tmpl string) {
 		http.Error(w, "500 | Internal Server Error !", http.StatusInternalServerError)
 		return
 	}
+
 	RenderTemplate(w, tmpl, data)
 }
 
@@ -43,12 +40,17 @@ func Handler(w http.ResponseWriter, r *http.Request) {
 		}
 
 		RenderTemplate(w, tmpl, nil)
+
 	case "/ascii-art":
 		if r.Method != http.MethodPost {
 			http.Error(w, "405 | Method Not Allowed: Use POST", http.StatusMethodNotAllowed)
 			return
 		}
 		HandleAsciiArt(w, r, tmpl)
+
+	case "/about":
+		RenderTemplate(w, "about.html", nil)
+
 	default:
 		http.NotFound(w, r)
 	}

@@ -19,7 +19,7 @@ func RenderTemplate(w http.ResponseWriter, tmpl string, data interface{}) {
 	err = t.ExecuteTemplate(w, tmpl, data)
 	if err != nil {
 		http.Error(w, "500 | Internal Server Error !", http.StatusInternalServerError)
-		fmt.Println("Error executing template: ", err)
+		fmt.Println("Error executing the template: ", err)
 		return
 	}
 }
