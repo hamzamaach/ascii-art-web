@@ -17,7 +17,7 @@ ASCII-Art-Web is a web-based implementation of the ASCII-Art project. It allows 
 
     <!--
     ```sh
-     git clone https://github.com/yourusername/ascii-art-web.git 
+     git clone https://github.com/hamzamaach/ascii-art-web.git 
     cd ascii-art-web
     ```
     -->
@@ -52,9 +52,8 @@ ASCII-Art-Web is a web-based implementation of the ASCII-Art project. It allows 
 ### File Structure
 
 - `main.go`: The main Go file that contains the HTTP server logic.
-- `templates/`: Directory containing HTML templates.
-  - `index.html`: Main page template.
-  - `result.html`: Template for displaying the ASCII art.
+- `index.html`: Main page template.
+- `features/`: Directory containing files that contain all functions.
 - `banners/`: Directory containing banner files (`shadow.txt`, `standard.txt`, `thinkertoy.txt`).
 
 ### HTTP Endpoints
