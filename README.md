@@ -71,5 +71,6 @@ ASCII-Art-Web is a web-based implementation of the ASCII-Art project. It allows 
 ### Error Handling
 
 - **Invalid Input**: Returns a 400 Bad Request status.
-- **Missing Banner**: Returns a 404 Not Found status.
+- **Page not Found**: Returns a 404 Not Found status.
+- **Invalid Banner**: Returns a 404 Not Found status.
 - **Unhandled Errors**: Returns a 500 Internal Server Error status.
