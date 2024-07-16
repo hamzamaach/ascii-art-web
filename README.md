@@ -65,7 +65,7 @@ ASCII-Art-Web is a web-based implementation of the ASCII-Art project. It allows 
     - **Status Code**: 
         - 200 OK: If the text is successfully converted.
         - 400 Bad Request: If the request is invalid.
-        - 404 Not Found: If the banner style is not found.
+        - 404 Not Found: If the page or the banner style is not found.
         - 500 Internal Server Error: For unhandled errors.
 
 ### Error Handling
