@@ -1,6 +1,7 @@
 package ascii_art_web
 
 import (
+	"net/http"
 	"strings"
 )
 
@@ -14,11 +15,14 @@ func ConvertTocharacterMap(content []string) map[rune][]string {
 }
 
 // ProcessInput processes the input string, reads the banner, and produces the ASCII art
-func ProcessInput(input, banner string) string {
+func ProcessInput(w http.ResponseWriter, input, banner string) (string, error) {
 	splittedInput := strings.Split(input, "\r\n")
 
-	charactersMap := ReadBanner(banner)
+	charactersMap, err := ReadBanner(banner, w)
+	if err != nil {
+		return "", err
+	}
 
 	result := DrawASCIIArt(charactersMap, splittedInput)
-	return strings.Join(result, "\n")
+	return strings.Join(result, "\n"), nil
 }
