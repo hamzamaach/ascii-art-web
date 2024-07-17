@@ -15,7 +15,7 @@ func HandleAsciiArt(w http.ResponseWriter, r *http.Request, tmpl string) {
 	}
 
 	if CheckBanner(banner) {
-		http.Error(w, "404 | Bad Request: Banner not found", http.StatusNotFound)
+		http.Error(w, "404 | Banner not found", http.StatusNotFound)
 		return
 	}
 
