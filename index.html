@@ -6,12 +6,12 @@
 </head>
 
 <body>
-    <div style="text-align: center;">
+    <center>
     <a href="/">
         <h1>ASCII ART WEB</h1>
     </a>
     <form action="/ascii-art" method="post">
-        <textarea name="string" required style="height: 100px; width: 500px;"></textarea><br><br>
+        <textarea name="string" required rows="10" cols="69" placeholder="Entre your text to be generated"></textarea><br><br>
         <select name="banner">
             <option value="standard">Standard</option>
             <option value="shadow">Shadow</option>
@@ -21,6 +21,7 @@
     </form>
     <pre>{{.}}</pre>
     <a href="about">About</a>
+    </center>
 </body>
 
 </html>
