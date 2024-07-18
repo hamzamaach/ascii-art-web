@@ -3,26 +3,33 @@
 
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="/assets/style.css">
+    <link rel="shortcut icon" href="https://dl.dropboxusercontent.com/s/0qq5anxliaopt8d/sun.ico" type="image/x-icon">   
     <title>ASCII ART WEB</title>
 </head>
 
 <body>
     <center>
-        <a href="/">
-            <h1>ASCII ART WEB</h1>
-        </a>
         <form action="/ascii-art" method="post">
-            <textarea name="string" required rows="10" cols="69" placeholder="Enter your text to be generated">{{.Input}}</textarea><br><br>
+            <a href="/">
+                <h2>ascii-art Generator</h2>
+            </a>
+            <textarea name="string" required rows="6" cols="69"
+                placeholder="Enter your text to be generated">{{.Input}}</textarea>
             <select name="banner">
-                <option value="standard" {{if eq .Banner "standard"}}selected{{end}}>Standard</option>
-                <option value="shadow" {{if eq .Banner "shadow"}}selected{{end}}>Shadow</option>
-                <option value="thinkertoy" {{if eq .Banner "thinkertoy"}}selected{{end}}>Thinkertoy</option>
-            </select><br><br>
-            <input type="submit" value="Generate">
+                <option value="standard" {{if eq .Banner "standard" }} selected {{end}}>Standard</option>
+                <option value="shadow" {{if eq .Banner "shadow" }} selected {{end}}>Shadow</option>
+                <option value="thinkertoy" {{if eq .Banner "thinkertoy" }} selected {{end}}>Thinkertoy</option>
+            </select>
+            <div>
+                <input type="submit" value="Generate">
+            </div>
         </form>
 
+        <div id="result">
+            <pre>{{.Ascii_art}}</pre>
+        </div>
         {{if .Ascii_art}}
-        <pre>{{.Ascii_art}}</pre>
         {{end}}
 
         <a href="about">About</a>
