@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>ASCII ART WEB</title>
+</head>
+
+<body>
+    <center>
+        <a href="/">
+            <h1>ASCII ART WEB</h1>
+        </a>
+        <form action="/ascii-art" method="post">
+            <textarea name="string" required rows="10" cols="69" placeholder="Enter your text to be generated">{{.Input}}</textarea><br><br>
+            <select name="banner">
+                <option value="standard" {{if eq .Banner "standard"}}selected{{end}}>Standard</option>
+                <option value="shadow" {{if eq .Banner "shadow"}}selected{{end}}>Shadow</option>
+                <option value="thinkertoy" {{if eq .Banner "thinkertoy"}}selected{{end}}>Thinkertoy</option>
+            </select><br><br>
+            <input type="submit" value="Generate">
+        </form>
+
+        {{if .Ascii_art}}
+        <pre>{{.Ascii_art}}</pre>
+        {{end}}
+
+        <a href="about">About</a>
+    </center>
+</body>
+
+</html>
