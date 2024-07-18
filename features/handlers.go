@@ -4,6 +4,12 @@ import (
 	"net/http"
 )
 
+type Data struct {
+	Ascii_art string
+	Input     string
+	Banner    string
+}
+
 // HandleAsciiArt processes the "ascii-art" route
 func HandleAsciiArt(w http.ResponseWriter, r *http.Request, tmpl string) {
 	str := r.FormValue("string")
@@ -19,12 +25,17 @@ func HandleAsciiArt(w http.ResponseWriter, r *http.Request, tmpl string) {
 		return
 	}
 
-	data, err := ProcessInput(w, str, banner)
+	asciiArt, err := ProcessInput(w, str, banner)
 	if err != nil {
 		http.Error(w, "500 | Internal Server Error !", http.StatusInternalServerError)
 		return
 	}
 
+	data := Data{
+		Ascii_art: asciiArt,
+		Input:     str,
+		Banner:    banner,
+	}
 	RenderTemplate(w, tmpl, data)
 }
 
@@ -39,7 +50,7 @@ func Handler(w http.ResponseWriter, r *http.Request) {
 			return
 		}
 
-		RenderTemplate(w, tmpl, nil)
+		RenderTemplate(w, tmpl, Data{})
 
 	case "/ascii-art":
 		if r.Method != http.MethodPost {
@@ -49,7 +60,7 @@ func Handler(w http.ResponseWriter, r *http.Request) {
 		HandleAsciiArt(w, r, tmpl)
 
 	case "/about":
-		RenderTemplate(w, "about.html", nil)
+		RenderTemplate(w, "about.html", Data{})
 
 	default:
 		http.NotFound(w, r)
