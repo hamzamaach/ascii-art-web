@@ -12,9 +12,9 @@
     <center>
         <form action="/ascii-art" method="post">
             <a href="/">
-                <h2>ascii-art Generator</h2>
+                <h2>ASCII_ART GENERATOR</h2>
             </a>
-            <textarea name="string" required rows="6" cols="69"
+            <textarea name="string" required maxlength="1000"
                 placeholder="Enter your text to be generated">{{.Input}}</textarea>
             <select name="banner">
                 <option value="standard" {{if eq .Banner "standard" }} selected {{end}}>Standard</option>

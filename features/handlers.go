@@ -15,16 +15,10 @@ func HandleAsciiArt(w http.ResponseWriter, r *http.Request, tmpl string) {
 	str := r.FormValue("string")
 	banner := r.FormValue("banner")
 
-	if CheckValidInput(str) {
-		http.Error(w, "400 | Bad Request: Invalid input. The input must contain only printable ASCII characters with ASCII values ranging from 32 to 126.", http.StatusBadRequest)
+	if !ValidateInput(w, str, banner) {
 		return
 	}
-
-	if CheckBanner(banner) {
-		http.Error(w, "404 | Banner not found", http.StatusNotFound)
-		return
-	}
-
+	
 	asciiArt, err := ProcessInput(w, str, banner)
 	if err != nil {
 		http.Error(w, "500 | Internal Server Error !", http.StatusInternalServerError)

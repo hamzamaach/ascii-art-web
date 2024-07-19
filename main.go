@@ -12,5 +12,8 @@ func main() {
 	http.Handle("/assets/", http.StripPrefix("/assets/", fs))
 	http.HandleFunc("/", ft.Handler)
 	fmt.Println("Starting the server on : http://localhost:8080")
-	http.ListenAndServe("localhost:8080", nil)
+	err := http.ListenAndServe("localhost:8080", nil)
+	if err != nil {
+		fmt.Println("500 | Internal Server Error :", err)
+	}
 }
