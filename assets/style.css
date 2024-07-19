@@ -86,7 +86,7 @@ select {
     min-width: 50%;
     max-width: 100%;
     margin-bottom: 10px;
-    border: 3px solid var(--primary-color);
+    border: 3px dotted var(--primary-color);
     border-radius: 20px;
     color: black;
     overflow: auto;

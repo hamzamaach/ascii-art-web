@@ -8,6 +8,7 @@ import (
 )
 
 func main() {
+	// Creat a costum file server handler
 	fs := http.FileServer(http.Dir("./assets"))
 	http.Handle("/assets/", http.StripPrefix("/assets/", fs))
 	http.HandleFunc("/", ft.Handler)

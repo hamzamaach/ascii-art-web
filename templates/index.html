@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="/assets/style.css">
-    <link rel="shortcut icon" href="https://dl.dropboxusercontent.com/s/0qq5anxliaopt8d/sun.ico" type="image/x-icon">   
+    <link rel="shortcut icon" href="https://dl.dropboxusercontent.com/s/0qq5anxliaopt8d/sun.ico" type="image/x-icon">
     <title>ASCII ART WEB</title>
 </head>
 
@@ -26,10 +26,10 @@
             </div>
         </form>
 
+        {{if .Ascii_art}}
         <div id="result">
             <pre>{{.Ascii_art}}</pre>
         </div>
-        {{if .Ascii_art}}
         {{end}}
 
         <a href="about">About</a>

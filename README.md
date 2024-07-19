@@ -1,13 +1,13 @@
-# ASCII-Art-Web
+# ASCII-Art-Web-stylize
 
 ## Description
 
-ASCII-Art-Web is a web-based implementation of the ASCII-Art project. It allows users to input text and transform it into a graphical representation using ASCII characters. The web interface supports multiple banner styles, including `shadow`, `standard`, and `thinkertoy`.
+ASCII-Art-stylize is a web-based implementation of the ASCII-Art project. It allows users to input text and transform it into a graphical representation using ASCII characters. The web interface with html & css supports multiple banner styles, including `shadow`, `standard`, and `thinkertoy`.
 
 ## Authors
 
-- Hamza Maach
 - Ismail Bentour
+- Hamza Maach
 
 ## Usage
 
@@ -16,8 +16,8 @@ ASCII-Art-Web is a web-based implementation of the ASCII-Art project. It allows 
 1. Clone the repository:
 
     ```sh
-    git clone https://learn.zone01oujda.ma/git/ibentour/ascii-art-web.git
-    cd ascii-art-web
+    git clone https://learn.zone01oujda.ma/git/hmaach/ascii-art-stylize.git
+    cd ascii-art-stylize
     ```
 
 2. Run the Go application:
@@ -53,6 +53,7 @@ ASCII-Art-Web is a web-based implementation of the ASCII-Art project. It allows 
 - `index.html`: Main page template.
 - `about.html`: about page template.
 - `features/`: Directory containing files that contain all functions.
+- `assets` : Directory containing sll the CSS assets.
 - `banners/`: Directory containing banner files (`shadow.txt`, `standard.txt`, `thinkertoy.txt`).
 
 ### HTTP Endpoints
