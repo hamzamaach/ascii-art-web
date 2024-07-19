@@ -53,7 +53,7 @@ ASCII-Art-stylize is a web-based implementation of the ASCII-Art project. It all
 - `index.html`: Main page template.
 - `about.html`: about page template.
 - `features/`: Directory containing files that contain all functions.
-- `assets` : Directory containing sll the CSS assets.
+- `assets/` : Directory containing sll the CSS assets.
 - `banners/`: Directory containing banner files (`shadow.txt`, `standard.txt`, `thinkertoy.txt`).
 
 ### HTTP Endpoints
