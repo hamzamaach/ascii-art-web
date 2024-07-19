@@ -11,7 +11,6 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    position: relative;
     background-color: rgba(0, 0, 0, 0.514);
     background-blend-mode: darken;
     color: #fff;
@@ -33,6 +32,7 @@ form {
 textarea {
     margin: 5px 15px;
     resize: none;
+    min-height: 150px;
     background-color: var(--input-bg-color);
     border: 2px solid var(--primary-color);
     border-radius: 10px;
@@ -104,4 +104,67 @@ pre {
 
 a {
     color: var(--primary-color);
+}
+
+
+
+@media (min-width: 1005px) and (max-width: 1281px) {
+    form {
+        width: 70%;
+    }
+
+    #result {
+        width: 70%;
+    }
+
+
+}
+
+
+@media (min-width: 200px) and (max-width: 1005px) {
+    form {
+        width: 95%;
+        gap: 25px;
+        padding: 30px 0;
+    }
+
+    #result {
+        width: 95%;
+    }
+
+    textarea {
+        min-height: 300px;
+        font-size: 13px;
+        font-weight: 500;
+
+    }
+    textarea::placeholder {
+        font-size: 25px;
+        font-weight: 500;
+
+    }
+
+    pre {
+        font-weight: bolder;
+        min-height: 400px;
+        padding: 10px;
+    }
+
+    input[type="submit"] {
+        padding: 10px 25px;
+        font-size: 30px;
+        font-weight: 700;
+    }
+
+    select {
+        font-size: 25px;
+        min-height: 70px;
+    }
+
+    h2 {
+        font-size: 60px;
+    }
+    a{
+        font-size: larger;
+    }
 }
