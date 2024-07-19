@@ -2,7 +2,7 @@
 
 ## Description
 
-ASCII-Art-stylize is a web-based implementation of the ASCII-Art project. It allows users to input text and transform it into a graphical representation using ASCII characters. The web interface with html & css supports multiple banner styles, including `shadow`, `standard`, and `thinkertoy`.
+ASCII-Art-Web-Stylize is a web-based implementation of the ASCII-Art project. It allows users to input text and transform it into a graphical representation using ASCII characters. The web interface with html & css supports multiple banner styles, including `shadow`, `standard`, and `thinkertoy`.
 
 ## Authors
 
@@ -16,7 +16,7 @@ ASCII-Art-stylize is a web-based implementation of the ASCII-Art project. It all
 1. Clone the repository:
 
     ```sh
-    git clone https://learn.zone01oujda.ma/git/hmaach/ascii-art-stylize.git
+    git clone https://learn.zone01oujda.ma/git/hmaach/ascii-art-web-stylize.git
     cd ascii-art-stylize
     ```
 
@@ -75,4 +75,5 @@ ASCII-Art-stylize is a web-based implementation of the ASCII-Art project. It all
 - **Invalid Input**: Returns a 400 Bad Request status.
 - **Page not Found**: Returns a 404 Not Found status.
 - **Invalid Banner**: Returns a 404 Not Found status.
+- **Method Not Allowed**: Returns a Method Not Allowed status.
 - **Unhandled Errors**: Returns a 500 Internal Server Error status.
