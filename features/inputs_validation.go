@@ -30,7 +30,7 @@ func checkValidString(input string) bool {
 // ValidateInput checks the validity of the input string, banner, and other parameters
 func ValidateInput(w http.ResponseWriter, str, banner string) bool {
 	if checkBanner(banner) {
-		http.Error(w, "404 | Bad Request: Banner not found", http.StatusNotFound)
+		http.Error(w, "404 | Banner not found", http.StatusNotFound)
 		return false
 	}
 	if str == "" {
@@ -38,7 +38,7 @@ func ValidateInput(w http.ResponseWriter, str, banner string) bool {
 		return false
 	}
 	if len(str) > 1000 {
-		http.Error(w, "400 | Bad Request: Invalid input. The input must contain under 1000 characters.", http.StatusBadRequest)
+		http.Error(w, "413 | The input must contain under 1000 characters.", http.StatusRequestEntityTooLarge)
 		return false
 	}
 	if checkValidString(str) {
