@@ -1,8 +1,9 @@
 package ascii_art_web
 
 import (
+	"fmt"
 	"net/http"
-	"os"
+	"strings"
 )
 
 type Data struct {
@@ -12,32 +13,18 @@ type Data struct {
 }
 
 // DownloadHandler handles the download of the ASCII art file
-func DownloadHandler(w http.ResponseWriter, r *http.Request) {
-	file := r.URL.Query().Get("file")
-	if file == "" {
-		http.Error(w, "400 | Bad Request: No file specified", http.StatusBadRequest)
-		return
-	}
-	content, err := os.ReadFile(file)
-	if err != nil {
-		http.Error(w, "404 | Not Found: File not found", http.StatusNotFound)
-		return
-	}
-
-	w.Header().Set("Content-Disposition", "attachment; filename="+file)
-	w.Header().Set("Content-Type", "text/plain")
-	w.Write(content)
-}
 
 // HandleAsciiArt processes the "ascii-art" route
 func HandleAsciiArt(w http.ResponseWriter, r *http.Request, tmpl string) {
 	str := r.FormValue("string")
 	banner := r.FormValue("banner")
-	export := r.FormValue("export")
+	export := r.Form.Has("Download")
 
 	if !ValidateInput(w, str, banner) {
 		return
 	}
+
+	str = strings.ReplaceAll(str, "\r\n", "\n")
 
 	asciiArt, err := ProcessInput(w, str, banner)
 	if err != nil {
@@ -50,19 +37,18 @@ func HandleAsciiArt(w http.ResponseWriter, r *http.Request, tmpl string) {
 		Input:     str,
 		Banner:    banner,
 	}
-
-	switch export {
-	case "download":
-		filename := "ascii_art.txt"
+	if export {
+		filename := "ascii_art" + r.FormValue("filetype")
 		w.Header().Set("Content-Disposition", "attachment; filename="+filename)
+		w.Header().Set("Content-Length", fmt.Sprint(len(data.Ascii_art)))
 		w.Header().Set("Content-Type", "text/plain")
 		w.Write([]byte(data.Ascii_art))
-	default:
+	} else {
 		RenderTemplate(w, tmpl, data)
 	}
 }
 
-// MainHandler handles the root route and other cases
+// MainHandler handles the root route and other casescases
 func Handler(w http.ResponseWriter, r *http.Request) {
 	tmpl := "index.html"
 
