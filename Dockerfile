@@ -15,8 +15,11 @@ LABEL project="ascii-art-web" \
       version="1.0" \
       repo="https://learn.zone01oujda.ma/git/hmaach/ascii-art-web-dockerize"
 
+# Build the Go application
+RUN go build -o main
+
 # Expose port 8080 to the outside world
 EXPOSE 8080
 
 # Command to run the application
-CMD ["go", "run", "."]
+CMD ["./main"]
