@@ -21,11 +21,14 @@
                 <option value="shadow" {{if eq .Banner "shadow" }} selected {{end}}>Shadow</option>
                 <option value="thinkertoy" {{if eq .Banner "thinkertoy" }} selected {{end}}>Thinkertoy</option>
             </select>
-            <div class="export">
-                <input type="radio" name="export" value="show" id="show" checked> Show it<br>
-                <input type="radio" name="export" value="download" id="download"> Export as file<br>
-            </div>
+            <select name="filetype" id="filetype" style="cursor: context-menu;">
+                <option value=".txt">Text (.txt)</option>
+                <option value=".md">Mark down (.md)</option>
+                <option value=".rtf">Rich text (.rtf)</option>
+                <option value=".csv">Comma separated values (.csv)</option>
+            </select>
             <div>
+                <input type="submit" role="checkbox" name="Download" value="Download">
                 <input type="submit" value="Generate">
             </div>
         </form>
