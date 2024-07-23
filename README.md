@@ -1,4 +1,4 @@
-# ASCII-Art-Web-stylize
+# ASCII-Art-Web-export-file
 
 ## Description
 
@@ -18,8 +18,8 @@ ASCII-Art-Web-Stylize is a web-based implementation of the ASCII-Art project. It
 1. Clone the repository:
 
     ```sh
-    git clone https://learn.zone01oujda.ma/git/hmaach/ascii-art-web-stylize.git
-    cd ascii-art-stylize
+    git clone https://learn.zone01oujda.ma/git/melalj/ascii-art-web-export-file.git
+    cd ascii-art-export-file
     ```
 
 2. Run the Go application:
@@ -39,8 +39,8 @@ ASCII-Art-Web-Stylize is a web-based implementation of the ASCII-Art project. It
 1. Clone the repository:
 
     ```sh
-    git clone https://learn.zone01oujda.ma/git/hmaach/ascii-art-web-stylize.git
-    cd ascii-art-stylize
+    git clone https://learn.zone01oujda.ma/git/melalj/ascii-art-web-export-file.git
+    cd ascii-art-export-file
     ```
 
 2. Build the Docker image:
@@ -71,8 +71,8 @@ docker rm ascii-art-web-con
 ### Web Interface
 
 1. Enter your text in the input field.
-2. Select the desired banner style (shadow, standard, or thinkertoy) using the radio buttons.
-3. Click the "Generate" button to generate the ASCII art.
+2. Select the desired banner style (shadow, standard, or thinkertoy) using the dropdown selector.
+3. Click the "Generate" button to generate the ASCII art or "Download" button to export the output as file.
 
 ## Implementation Details
 
@@ -81,7 +81,7 @@ docker rm ascii-art-web-con
 1. **Input Parsing**: The input string is read from the user via an HTML form.
 2. **Banner Selection**: The selected banner style is determined based on user input.
 3. **Text Conversion**: The input string is converted to its ASCII representation using the selected banner style.
-4. **Output Rendering**: The resulting ASCII art is displayed on the webpage.
+4. **Output Rendering**: The resulting ASCII art can be displayed on the webpage or downloaded.
 
 ### File Structure
 
@@ -112,6 +112,7 @@ docker rm ascii-art-web-con
 - **Invalid Input**: Returns a 400 Bad Request status.
 - **Page not Found**: Returns a 404 Not Found status.
 - **Invalid Banner**: Returns a 404 Not Found status.
+- **Entity Too Large**: Returns a 413 Entity Too Large.
 - **Method Not Allowed**: Returns a Method Not Allowed status.
 - **Unhandled Errors**: Returns a 500 Internal Server Error status.
 
