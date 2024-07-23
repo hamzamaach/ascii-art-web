@@ -10,7 +10,7 @@ docker system prune -f
 docker rmi ascii-art-web-img
 
 # Build a new image
-docker build -t ascii-art-web-img .
+docker build -f Dockerfile -t ascii-art-web-img .
 
 # Run a new container
 docker run -d -p 8080:8080 --name ascii-art-web-con ascii-art-web-img
