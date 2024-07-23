@@ -21,6 +21,10 @@
                 <option value="shadow" {{if eq .Banner "shadow" }} selected {{end}}>Shadow</option>
                 <option value="thinkertoy" {{if eq .Banner "thinkertoy" }} selected {{end}}>Thinkertoy</option>
             </select>
+            <div class="export">
+                <input type="radio" name="export" value="show" id="show" checked> Show it<br>
+                <input type="radio" name="export" value="download" id="download"> Export as file<br>
+            </div>
             <div>
                 <input type="submit" value="Generate">
             </div>
