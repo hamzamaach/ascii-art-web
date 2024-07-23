@@ -18,7 +18,7 @@ ASCII-Art-Web-Stylize is a web-based implementation of the ASCII-Art project. It
 1. Clone the repository:
 
     ```sh
-    git clone https://learn.zone01oujda.ma/git/melalj/ascii-art-web-export-file.git
+    git clone https://learn.zone01oujda.ma/git/hmaach/ascii-art-web-export-file.git
     cd ascii-art-export-file
     ```
 
@@ -39,7 +39,7 @@ ASCII-Art-Web-Stylize is a web-based implementation of the ASCII-Art project. It
 1. Clone the repository:
 
     ```sh
-    git clone https://learn.zone01oujda.ma/git/melalj/ascii-art-web-export-file.git
+    git clone https://learn.zone01oujda.ma/git/hmaach/ascii-art-web-export-file.git
     cd ascii-art-export-file
     ```
 
